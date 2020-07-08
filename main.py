@@ -4,6 +4,9 @@ import os
 import json
 from datacleaner import cleaner
 
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')
+
 def convertToJSON():
     with open('data/input.txt', 'r') as f:
         text = f.read()
@@ -67,7 +70,7 @@ def complex_search():
         view(i)
     if input('Click enter to start over, "q" to quit: ') == 'q':
         sys.exit()
-    os.system('clear')  # on linux / os x
+    cls()
 
 while True:
     print('Pick an option')
@@ -78,6 +81,6 @@ while True:
         view(input('Search: '))
         if input('Click enter to start over, "q" to quit: ') == 'q':
             sys.exit()
-        os.system('clear')  # on linux / os x
+        cls()
     elif choice == '2':
         complex_search()
